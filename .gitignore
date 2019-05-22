@@ -1,2 +1,7 @@
 /node_modules
 nextjs-doc-refs
+
+npm-debug.log
+
+.next
+.vscode
