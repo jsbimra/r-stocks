@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import StockChart from './StockChart';
-import { isRegExp } from 'util';
-
+import AlertUser from './AlertUser';
 
 /*
 2. The tracker will only start tracking once the user clicks on a checkbox.
@@ -17,14 +16,17 @@ is unset.
 
 */
 class Stocks extends React.Component {
-
+    alertTimeout = null;
     constructor(props) {
         super(props);
 
         this.newRunningStocks = [];
         this.state = {
             runningStocks: [],
-            stockInputTrigger: false
+            hideTriggerMsg: true,
+            stockInputTriggered: false,
+            stockInputTriggerName: '',
+
         }
 
         this.handleStockTrigger = this.handleStockTrigger.bind(this);
@@ -32,28 +34,37 @@ class Stocks extends React.Component {
 
     handleStockTrigger(e) {
         const target = e.target;
-        let { runningStocks } = this.state;
+        const { runningStocks } = this.state;
+        const stockName = target.getAttribute('data-stockname') ? target.getAttribute('data-stockName') : '';
+        clearTimeout(this.alertTimeout);
+
+        this.setState({ hideTriggerMsg: false });
 
         if (!runningStocks.includes(target.name)) {
-            this.newRunningStocks.push(target.name)
+            this.newRunningStocks.push(target.name);
+            this.setState({ stockInputTriggered: true });
+
         } else {
-            console.log('else ');
             const idx = this.newRunningStocks.findIndex(item => item === target.name);
             this.newRunningStocks.splice(idx, 1)
+            this.setState({ stockInputTriggered: false });
         }
-        this.setState({ runningStocks: this.newRunningStocks })
+        this.setState({
+            runningStocks: this.newRunningStocks,
+            stockInputTriggerName: stockName
+        })
 
-        console.log(this.state.runningStocks);
-
+        this.alertTimeout = setTimeout(() => {
+            this.setState({ hideTriggerMsg: true });
+        }, 1000);
     }
     renderSelectedStocks(stocks) {
         if (stocks.length) {
-
+            const { stockInputTriggered, stockInputTriggerName, hideTriggerMsg } = this.state;
             const prepareChartOptions = arrData => {
                 let seriesData = arrData
                     .map(data => {
                         const [date, open, high, low, close, volume] = data;
-
                         const [year, month, day] = date.indexOf('-') !== -1 ? date.split('-') : '0000-00-0';
 
                         return [Date.UTC(year, month, day), open];
@@ -64,7 +75,7 @@ class Stocks extends React.Component {
                     //     text: 'My stock chart'
                     // },
                     chart: {
-                        height: '55%'
+                        height: '35%'
                     },
                     rangeSelector: {
                         enabled: false
@@ -96,15 +107,19 @@ class Stocks extends React.Component {
                                 close,
                                 volume
                             };
-                            // console.log('return tempObj', tempObj)
                         });
                     return tempObj;
-                    console.log('return tempObj', tempObj)
                 }
             }
 
             return (
                 <div>
+                    <div className={hideTriggerMsg ? 'd-none' : 'fixed-top row mb-3 p-3'} style={{
+                        top: '60px'
+                    }}>
+                        {stockInputTriggered ? <AlertUser msg={`Trigger fetch for stock - ${stockInputTriggerName} `} msgType="ok" /> : (stockInputTriggerName !== '' ? <AlertUser msg={`Stopped fetch for stock - ${stockInputTriggerName} `} msgType="notok" /> : null)}
+
+                    </div>
                     <div className="row">
                         <div className="col-1"></div>
                         <div className="col-2"><strong>Stock</strong></div>
@@ -123,28 +138,27 @@ class Stocks extends React.Component {
                             return (
                                 <div className="row mt-2" key={stock.id}>
 
-                                    <div className="col-1">
-                                        <input type="checkbox"
-                                            name={`stockTrigger[${idx}]`}
-                                            value=""
-                                            className="custom-control custom-checkbox"
-                                            onChange={this.handleStockTrigger} /></div>
+                                    <div className="col-1 text-center">
+                                        <div className="custom-switch custom-control">
+                                            <input type="checkbox"
+                                                data-stockname={stock.dataset_code}
+                                                name={`stockTrigger[${idx}]`}
+                                                id={`stockTrigger[${idx}]`}
+                                                value=""
+                                                className="custom-control-input"
+                                                onChange={this.handleStockTrigger} />
+                                            <label className="custom-control-label" htmlFor={`stockTrigger[${idx}]`}></label>
+                                        </div>
+                                    </div>
                                     <div className="col-2">{stock.dataset_code}</div>
                                     <div className="col-1 text-right">{startDate}</div>
                                     <div className="col-3 text-right">
-                                        <RenderDataPoint dataPoint={getDataPoints(filteredStockByEndDate).volume} /></div>
+                                        <RenderDataPoint dataPoint={getDataPoints(filteredStockByEndDate).volume} />
+                                    </div>
                                     <div className="col text-center">
-                                        <div
-                                            style={{
-                                                width: "100%",
-                                            }}
-                                        >
-                                            <StockChart
-                                                chartOptions={prepareChartOptions(arrData)}
-
-                                            />
-                                        </div>
-
+                                        <StockChart
+                                            chartOptions={prepareChartOptions(arrData)}
+                                        />
                                     </div>
                                 </div>
                             )
@@ -163,9 +177,7 @@ class Stocks extends React.Component {
         return (
             <div>
                 <h2>Stocks</h2>
-
-                {this.renderSelectedStocks(selectedStocks)}
-                <div className="row mt-5">
+                <div className="row mt-4 mb-4">
                     <div className="col-12">
                         <select name="" onChange={handleAddMoreStock} className="form-control">
                             <option>Add more stocks</option>
@@ -173,8 +185,12 @@ class Stocks extends React.Component {
                                 stocks.map(stock => <option key={stock.id} value={stock.dataset_code}>{stock.name}</option>)
                             }
                         </select>
+                        <div className="clearfix mt-1 mb-1">{this.props.children}</div>
                     </div>
                 </div>
+
+                {this.renderSelectedStocks(selectedStocks)}
+
             </div>
         );
     }

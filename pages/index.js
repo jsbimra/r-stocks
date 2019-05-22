@@ -4,13 +4,17 @@ import ReactDOM from 'react-dom';
 import defaultDataSets from '../data/stocks.json';
 import Layout from '../components/Layout';
 import Stocks from '../components/Stocks';
+import AlertUser from '../components/AlertUser';
 
-const quandlAPIKey = 'oUSLiCbXATD2xbPCxnJf';
+// const quandlAPIKey = 'oUSLiCbXATD2xbPCxnJf';
 
 class Home extends React.Component {
+    alertTimeout = null;
     constructor(props) {
         super(props);
         this.state = {
+            alertUserFlag: false,
+            stockName: false,
             stockItems: [],
             stocks: [],
             selectedStocks: []
@@ -21,13 +25,15 @@ class Home extends React.Component {
     componentDidMount() {
         if (defaultDataSets && defaultDataSets.datasets) {
             const defaultStock = [defaultDataSets.datasets[0]];
-            this.setState({ stocks: defaultDataSets.datasets, 
-                selectedStocks: defaultStock, 
-                stockItems: [defaultStock[0].dataset_code]});
+            this.setState({
+                stocks: defaultDataSets.datasets,
+                selectedStocks: defaultStock,
+                stockItems: [defaultStock[0].dataset_code]
+            });
         }
     }
     makeEntryOfStock(name) {
-        console.log('makeEntryOfStock ', name);
+        // console.log('makeEntryOfStock ', name);
         const { stocks, selectedStocks } = this.state;
 
         const filterStock = stocks.filter(stock => stock.dataset_code === name);
@@ -39,20 +45,33 @@ class Home extends React.Component {
         const curValue = e.target.value;
         let { stockItems } = this.state;
         if (curValue) {
-            stockItems.includes(curValue) ? '' : this.makeEntryOfStock(curValue);
+            clearTimeout(this.alertTimeout);
+            stockItems.includes(curValue) ? this.setState({ alertUserFlag: true, stockName: curValue }) : this.makeEntryOfStock(curValue);
             stockItems.push(curValue);
-            this.setState({stockItems})
+            this.setState({ stockItems });
         }
     }
 
+    alertUser(msg, msgType) {
+        this.alertTimeout = setTimeout(() => {
+            this.setState({ alertUserFlag: false });
+        }, 800);
+        return <AlertUser msg={msg} msgType={msgType} />
+    }
+
     render() {
-        const { stocks, selectedStocks } = this.state;
-        // console.log(stocks, selectedStocks);
+        const { stocks, selectedStocks, alertUserFlag, stockItems } = this.state;
 
         return (
             <Layout>
-                <Stocks stocks={stocks} selectedStocks={selectedStocks} handleAddMoreStock={this.handleAddMoreStock} />
-            </Layout >
+                <Stocks
+                    stocks={stocks}
+                    selectedStocks={selectedStocks}
+                    handleAddMoreStock={this.handleAddMoreStock}>
+                    {alertUserFlag ? this.alertUser(`Stock - ${this.state.stockName} already selected.`, 'notok') : null}
+
+                </Stocks>
+            </Layout>
         )
     }
 }
