@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import StockChart from './StockChart';
 import AlertUser from './AlertUser';
-
 /*
 2. The tracker will only start tracking once the user clicks on a checkbox.
 3. Once the checkbox is checked the start date is updated

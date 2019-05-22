@@ -385,7 +385,7 @@ function (_React$Component) {
           return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 94
+              lineNumber: 93
             },
             __self: this
           }, dataPoint);
@@ -419,7 +419,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116
+            lineNumber: 115
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
@@ -429,7 +429,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 117
+            lineNumber: 116
           },
           __self: this
         }, stockInputTriggered ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_AlertUser__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -437,7 +437,7 @@ function (_React$Component) {
           msgType: "ok",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 119
           },
           __self: this
         }) : stockInputTriggerName !== '' ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_AlertUser__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -445,79 +445,79 @@ function (_React$Component) {
           msgType: "notok",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 119
           },
           __self: this
         }) : null), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 123
+            lineNumber: 122
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "col-1",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 123
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "col-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 125
+            lineNumber: 124
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 125
+            lineNumber: 124
           },
           __self: this
         }, "Stock")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "col-1",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 126
+            lineNumber: 125
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 126
+            lineNumber: 125
           },
           __self: this
         }, "Start")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "col-3 text-right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 127
+            lineNumber: 126
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 127
+            lineNumber: 126
           },
           __self: this
         }, "Data Points")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
           className: "col",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 128
+            lineNumber: 127
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 128
+            lineNumber: 127
           },
           __self: this
         }, "Graph"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("hr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130
+            lineNumber: 129
           },
           __self: this
         }), stocks.map(function (stock, idx) {
@@ -532,21 +532,21 @@ function (_React$Component) {
             key: stock.id,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 139
+              lineNumber: 138
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
             className: "col-1 text-center",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 141
+              lineNumber: 140
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
             className: "custom-switch custom-control",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 142
+              lineNumber: 141
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
@@ -559,7 +559,7 @@ function (_React$Component) {
             onChange: _this3.handleStockTrigger,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 143
+              lineNumber: 142
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
@@ -567,49 +567,49 @@ function (_React$Component) {
             htmlFor: "stockTrigger[".concat(idx, "]"),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 150
+              lineNumber: 149
             },
             __self: this
           }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
             className: "col-2",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 153
+              lineNumber: 152
             },
             __self: this
           }, stock.dataset_code), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
             className: "col-1 text-right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 154
+              lineNumber: 153
             },
             __self: this
           }, startDate), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
             className: "col-3 text-right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 155
+              lineNumber: 154
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(RenderDataPoint, {
             dataPoint: getDataPoints(filteredStockByEndDate).volume,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 156
+              lineNumber: 155
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
             className: "col text-center",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 158
+              lineNumber: 157
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_StockChart__WEBPACK_IMPORTED_MODULE_9__["default"], {
             chartOptions: prepareChartOptions(arrData),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 159
+              lineNumber: 158
             },
             __self: this
           })));
@@ -619,7 +619,7 @@ function (_React$Component) {
           className: "text-info text-center",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 171
+            lineNumber: 170
           },
           __self: this
         }, "Loading stocks...");
@@ -635,27 +635,27 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 177
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 178
         },
         __self: this
       }, "Stocks"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "row mt-4 mb-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 180
+          lineNumber: 179
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "col-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 180
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("select", {
@@ -664,13 +664,13 @@ function (_React$Component) {
         className: "form-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 181
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("option", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 182
         },
         __self: this
       }, "Add more stocks"), stocks.map(function (stock) {
@@ -679,7 +679,7 @@ function (_React$Component) {
           value: stock.dataset_code,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 185
+            lineNumber: 184
           },
           __self: this
         }, stock.name);
@@ -687,7 +687,7 @@ function (_React$Component) {
         className: "clearfix mt-1 mb-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 187
         },
         __self: this
       }, this.props.children))), this.renderSelectedStocks(selectedStocks));
