@@ -3,5 +3,6 @@ nextjs-doc-refs
 
 npm-debug.log
 
+/.next
 .next
 .vscode

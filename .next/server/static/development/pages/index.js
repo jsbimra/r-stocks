@@ -93,76 +93,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/Chart.js":
-/*!*****************************!*\
-  !*** ./components/Chart.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-
-
-
-
-
-var _jsxFileName = "C:\\Users\\jat\\learningspace\\doyo-nextjs\\components\\Chart.js";
- // import { Chart } from 'react-charts';
-
-var Chart =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Chart, _React$Component);
-
-  function Chart(props) {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Chart);
-
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Chart).call(this, props));
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Chart, [{
-    key: "render",
-    value: function render() {
-      var chartData = this.props.chartData;
-      var chartDynamicData = [{
-        label: "Series 1",
-        data: chartData.length ? [chartData] : []
-      }];
-      var chartAxes = [{
-        primary: true,
-        type: "linear",
-        position: "bottom"
-      }, {
-        type: "linear",
-        position: "left"
-      }];
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Chart, {
-        data: chartDynamicData,
-        axes: chartAxes,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      });
-    }
-  }]);
-
-  return Chart;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Chart);
-
-/***/ }),
-
 /***/ "./components/Header.js":
 /*!******************************!*\
   !*** ./components/Header.js ***!
@@ -273,6 +203,75 @@ function Layout(props) {
 
 /***/ }),
 
+/***/ "./components/StockChart.js":
+/*!**********************************!*\
+  !*** ./components/StockChart.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_highcharts_ReactHighstock__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-highcharts/ReactHighstock */ "react-highcharts/ReactHighstock");
+/* harmony import */ var react_highcharts_ReactHighstock__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_highcharts_ReactHighstock__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\jat\\learningspace\\doyo-nextjs\\components\\StockChart.js";
+ // import Highcharts from 'highcharts/highstock'
+// import HighchartsReact from 'highcharts-react';
+
+
+
+var StockChart =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(StockChart, _React$Component);
+
+  function StockChart(props) {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, StockChart);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(StockChart).call(this, props));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(StockChart, [{
+    key: "render",
+    value: function render() {
+      var chartOptions = this.props.chartOptions; // console.log(chartAxes, chartData);
+
+      return (// <HighchartsReact
+        //     highcharts={Highcharts}
+        //     constructorType={'stockChart'}
+        //     options={options}
+        // />
+        react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_highcharts_ReactHighstock__WEBPACK_IMPORTED_MODULE_6___default.a, {
+          config: chartOptions,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25
+          },
+          __self: this
+        })
+      );
+    }
+  }]);
+
+  return StockChart;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (StockChart);
+
+/***/ }),
+
 /***/ "./components/Stocks.js":
 /*!******************************!*\
   !*** ./components/Stocks.js ***!
@@ -282,208 +281,405 @@ function Layout(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Stocks; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Chart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Chart */ "./components/Chart.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _StockChart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./StockChart */ "./components/StockChart.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! util */ "util");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_9__);
+
+
+
+
+
+
+
 var _jsxFileName = "C:\\Users\\jat\\learningspace\\doyo-nextjs\\components\\Stocks.js";
 
 
 
-function renderSelectedStocks(stocks) {
-  if (stocks.length) {
-    return stocks.map(function (stock) {
-      console.log('renderSelectedStock ', stock);
-      var startDate = "".concat(stock.refreshed_at ? new Date(stock.refreshed_at).getUTCHours() : '', ":").concat(new Date(stock.refreshed_at).getUTCMinutes());
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row",
-        key: stock.id,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "checkbox",
-        value: "",
-        className: "custom-control custom-checkbox",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        },
-        __self: this
-      }, stock.dataset_code), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-2 text-right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        },
-        __self: this
-      }, startDate), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-2 text-right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        },
-        __self: this
-      }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-5 text-center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        },
-        __self: this
-      }, "drawing of chart "));
-    });
-  } else {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "text-info",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, "No stocks selected!");
-  }
-}
+/*
+2. The tracker will only start tracking once the user clicks on a checkbox.
+3. Once the checkbox is checked the start date is updated
+4. The stock value is fetched from the google api (mentioned below) at every 15
+seconds for each stock and the counter of the same is updated against each stock.
+5. Data points are stored in a list and a graph is updated on every successful API
+request.
+6. Once the user unchecks the checkbox of a particular stock the tracking for the same
+should be stopped.
+7. If the user again starts the tracking only fresh data should be tracked and the old data
+is unset.
 
-function Stocks(props) {
-  var stocks = props.stocks,
-      selectedStocks = props.selectedStocks,
-      handleAddMoreStock = props.handleAddMoreStock;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
-  }, "Stocks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, "Stock")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, "Start")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }, "Data Points")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-5",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, "Graph"))), renderSelectedStocks(selectedStocks), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row mt-5",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-12",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    name: "",
-    onChange: handleAddMoreStock,
-    className: "form-control",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, "Add more stocks"), stocks.map(function (stock) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      key: stock.id,
-      value: stock.dataset_code,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    }, stock.name);
-  })))));
-}
+*/
+
+var Stocks =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Stocks, _React$Component);
+
+  function Stocks(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Stocks);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Stocks).call(this, props));
+    _this.newRunningStocks = [];
+    _this.state = {
+      runningStocks: [],
+      stockInputTrigger: false
+    };
+    _this.handleStockTrigger = _this.handleStockTrigger.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Stocks, [{
+    key: "handleStockTrigger",
+    value: function handleStockTrigger(e) {
+      var target = e.target;
+      var runningStocks = this.state.runningStocks;
+
+      if (!runningStocks.includes(target.name)) {
+        this.newRunningStocks.push(target.name);
+      } else {
+        console.log('else ');
+        var idx = this.newRunningStocks.findIndex(function (item) {
+          return item === target.name;
+        });
+        this.newRunningStocks.splice(idx, 1);
+      }
+
+      this.setState({
+        runningStocks: this.newRunningStocks
+      });
+      console.log(this.state.runningStocks);
+    }
+  }, {
+    key: "renderSelectedStocks",
+    value: function renderSelectedStocks(stocks) {
+      var _this2 = this;
+
+      if (stocks.length) {
+        var prepareChartOptions = function prepareChartOptions(arrData) {
+          var seriesData = arrData.map(function (data) {
+            var _data = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data, 6),
+                date = _data[0],
+                open = _data[1],
+                high = _data[2],
+                low = _data[3],
+                close = _data[4],
+                volume = _data[5];
+
+            var _ref = date.indexOf('-') !== -1 ? date.split('-') : '0000-00-0',
+                _ref2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, 3),
+                year = _ref2[0],
+                month = _ref2[1],
+                day = _ref2[2];
+
+            return [Date.UTC(year, month, day), open];
+          });
+          return {
+            // title: {
+            //     text: 'My stock chart'
+            // },
+            chart: {
+              height: '55%'
+            },
+            rangeSelector: {
+              enabled: false
+            },
+            navigator: {
+              enabled: false
+            },
+            series: [{
+              data: seriesData
+            }]
+          };
+        };
+
+        var RenderDataPoint = function RenderDataPoint(props) {
+          var dataPoint = props.dataPoint;
+          return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 83
+            },
+            __self: this
+          }, dataPoint);
+        };
+
+        var getDataPoints = function getDataPoints(arrData) {
+          var tempObj = {};
+
+          if (arrData.length) {
+            arrData.map(function (data) {
+              var _data2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(data, 6),
+                  date = _data2[0],
+                  open = _data2[1],
+                  high = _data2[2],
+                  low = _data2[3],
+                  close = _data2[4],
+                  volume = _data2[5];
+
+              tempObj = {
+                date: date,
+                open: open,
+                high: high,
+                close: close,
+                volume: volume
+              }; // console.log('return tempObj', tempObj)
+            });
+            return tempObj;
+            console.log('return tempObj', tempObj);
+          }
+        };
+
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          className: "row",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 108
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          className: "col-1",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          className: "col-2",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
+          },
+          __self: this
+        }, "Stock")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          className: "col-1",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          },
+          __self: this
+        }, "Start")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          className: "col-3 text-right",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112
+          },
+          __self: this
+        }, "Data Points")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          className: "col",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113
+          },
+          __self: this
+        }, "Graph"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("hr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115
+          },
+          __self: this
+        }), stocks.map(function (stock, idx) {
+          // console.log('renderSelectedStock ', stock);
+          var startDate = "".concat(stock.refreshed_at ? new Date(stock.refreshed_at).getUTCHours() : '', ":").concat(new Date(stock.refreshed_at).getUTCMinutes());
+          var arrData = stock.data ? stock.data : [];
+          var filteredStockByEndDate = arrData.filter(function (item, idx) {
+            return !arrData[idx].indexOf(stock.end_date);
+          });
+          return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            className: "row mt-2",
+            key: stock.id,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 124
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            className: "col-1",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 126
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+            type: "checkbox",
+            name: "stockTrigger[".concat(idx, "]"),
+            value: "",
+            className: "custom-control custom-checkbox",
+            onChange: _this2.handleStockTrigger,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 127
+            },
+            __self: this
+          })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            className: "col-2",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 132
+            },
+            __self: this
+          }, stock.dataset_code), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            className: "col-1 text-right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 133
+            },
+            __self: this
+          }, startDate), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            className: "col-3 text-right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 134
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(RenderDataPoint, {
+            dataPoint: getDataPoints(filteredStockByEndDate).volume,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 135
+            },
+            __self: this
+          })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            className: "col text-center",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 136
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            style: {
+              width: "100%"
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 137
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_StockChart__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            chartOptions: prepareChartOptions(arrData),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 142
+            },
+            __self: this
+          }))));
+        }));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          className: "text-info text-center",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 157
+          },
+          __self: this
+        }, "Loading stocks...");
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          stocks = _this$props.stocks,
+          selectedStocks = _this$props.selectedStocks,
+          handleAddMoreStock = _this$props.handleAddMoreStock;
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 164
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 165
+        },
+        __self: this
+      }, "Stocks"), this.renderSelectedStocks(selectedStocks), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "row mt-5",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 168
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "col-12",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 169
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("select", {
+        name: "",
+        onChange: handleAddMoreStock,
+        className: "form-control",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 170
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 171
+        },
+        __self: this
+      }, "Add more stocks"), stocks.map(function (stock) {
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("option", {
+          key: stock.id,
+          value: stock.dataset_code,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 173
+          },
+          __self: this
+        }, stock.name);
+      })))));
+    }
+  }]);
+
+  return Stocks;
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Stocks);
 
 /***/ }),
 
@@ -517,6 +713,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "core-
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ "core-js/library/fn/array/is-array");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "core-js/library/fn/get-iterator");
 
 /***/ }),
 
@@ -671,6 +878,25 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 module.exports = _createClass;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithHoles; });
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
+
+function _arrayWithHoles(arr) {
+  if (_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(arr)) return arr;
+}
 
 /***/ }),
 
@@ -849,6 +1075,63 @@ function _iterableToArray(iter) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArrayLimit; });
+/* harmony import */ var _core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/get-iterator */ "./node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
+/* harmony import */ var _core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0__);
+
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = _core_js_get_iterator__WEBPACK_IMPORTED_MODULE_0___default()(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableRest.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableRest.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js ***!
@@ -909,6 +1192,28 @@ function _setPrototypeOf(o, p) {
   };
 
   return _setPrototypeOf(o, p);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _slicedToArray; });
+/* harmony import */ var _arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js");
+/* harmony import */ var _iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js");
+/* harmony import */ var _nonIterableRest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableRest.js");
+
+
+
+function _slicedToArray(arr, i) {
+  return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -1558,6 +1863,17 @@ module.exports = require("core-js/library/fn/array/is-array");
 
 /***/ }),
 
+/***/ "core-js/library/fn/get-iterator":
+/*!**************************************************!*\
+  !*** external "core-js/library/fn/get-iterator" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/get-iterator");
+
+/***/ }),
+
 /***/ "core-js/library/fn/is-iterable":
 /*!*************************************************!*\
   !*** external "core-js/library/fn/is-iterable" ***!
@@ -1712,6 +2028,17 @@ module.exports = require("react-dom");
 
 /***/ }),
 
+/***/ "react-highcharts/ReactHighstock":
+/*!**************************************************!*\
+  !*** external "react-highcharts/ReactHighstock" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-highcharts/ReactHighstock");
+
+/***/ }),
+
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -1720,6 +2047,17 @@ module.exports = require("react-dom");
 /***/ (function(module, exports) {
 
 module.exports = require("url");
+
+/***/ }),
+
+/***/ "util":
+/*!***********************!*\
+  !*** external "util" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("util");
 
 /***/ })
 
