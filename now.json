@@ -1,5 +1,7 @@
 {
     "version": 2,
+    "public": true,
+    "name": "r-stocks",
     "builds": [
         {
             "src": "package.json",
